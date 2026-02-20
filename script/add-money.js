@@ -38,6 +38,22 @@ document.getElementById('add-money-btn').addEventListener('click',function(){
           console.log('new balance:',newBalance);
           currentBalanceInput.innerText=newBalance;
 
+         //1.hisroty-container ke dhore niye ashbo
+         
+         const history = document.getElementById('history-container');
+         //2.new div create korbo
+         const newHistory = document.createElement('div');
+         //3.new div er moddhe innerhtml add korbo
+         newHistory.innerHTML=`
+          <div class="transaction-card p-5 bg-base-100">
+          add money successful from ${'bankAccount'},  ac-no ${'bankAcocuntNumber'} at ${new Date()}
+                    
+                </div>
+         `
+         //4.history container a new div append korbo
+         history.append(newHistory);
+
+
 
 
      }else{
@@ -45,4 +61,6 @@ document.getElementById('add-money-btn').addEventListener('click',function(){
              alert('invalid pin');
              return;
      }
+
+
 })
